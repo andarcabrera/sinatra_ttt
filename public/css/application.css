@@ -1,0 +1,43 @@
+html {
+    box-sizing: border-box;
+  }
+
+  *, *:before, *:after {
+      box-sizing: inherit;
+    }
+
+
+html {
+    background-color: #03B8AF;
+  }
+
+  .main-container {
+      background-color: #03B8AF;
+        margin:auto;
+      }
+
+.ttt-title {
+  margin: auto;
+  margin-top: 40px;
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
+  text-decoration: underline;
+  background-color: #03B8AF;
+}
+
+.side-by-side {
+  width: 45%;
+  margin: 20px;
+  float: left;
+  margin-top: 100px;
+  text-align: center;
+}
+
+.btn.btn-warning {
+  height: 100px;
+  width: 250px;
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+}

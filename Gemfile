@@ -12,4 +12,5 @@ gem 'ttt_db'
 
 group :development, :test do
   gem 'rspec'
+  gem 'simplecov'
 end
