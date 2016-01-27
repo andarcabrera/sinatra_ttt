@@ -14,4 +14,14 @@ describe "Game controller" do
       expect(last_response.body).to include("View Game History")
     end
   end
+
+    describe "GET '/games' " do
+      it "displays list of all games" do
+        get '/games'
+
+        expect(last_response.body).to include('Game 1')
+        expect(last_response.body).to include('Game 2')
+       #  expect(last_response).to be_ok
+      end
+    end
 end

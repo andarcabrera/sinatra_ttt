@@ -1,0 +1,10 @@
+<div class="games-container">
+  <h3>Game Database</h3>
+  <h4>Total games: <%= @games.count %></h4>
+
+  <p><% @games.all.each do |game|%>
+    <% id = game[:id] %>
+  <a href="games/<%=id %>"><p>Game <%= id %></p></a>
+  <% end %>
+  </p>
+</div>

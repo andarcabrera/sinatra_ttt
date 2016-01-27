@@ -9,6 +9,8 @@ gem 'shotgun'
 gem 'rack-test'
 gem 'ttt', :git => 'https://github.com/andarcabrera/ttt_gem.git'
 gem 'ttt_db'
+gem 'sequel'
+gem 'pg'
 
 group :development, :test do
   gem 'rspec'

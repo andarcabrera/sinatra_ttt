@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/andarcabrera/ttt_gem.git
-  revision: 2b01331baf809fb0cfc243dc1a25280a181f54ba
+  revision: 64c03520de6b31dbee898fbcd425451a3508b28f
   specs:
     ttt (0.0.0)
 
@@ -12,6 +12,7 @@ GEM
     docile (1.1.5)
     eventmachine (1.0.9.1)
     json (1.8.3)
+    pg (0.18.4)
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
@@ -22,7 +23,7 @@ GEM
       rspec-core (~> 3.4.0)
       rspec-expectations (~> 3.4.0)
       rspec-mocks (~> 3.4.0)
-    rspec-core (3.4.1)
+    rspec-core (3.4.2)
       rspec-support (~> 3.4.0)
     rspec-expectations (3.4.0)
       diff-lcs (>= 1.2.0, < 2.0)
@@ -31,6 +32,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.4.0)
     rspec-support (3.4.1)
+    sequel (4.30.0)
     shotgun (0.9.1)
       rack (>= 1.0)
     simplecov (0.11.1)
@@ -38,8 +40,8 @@ GEM
       json (~> 1.8)
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.0)
-    sinatra (1.4.6)
-      rack (~> 1.4)
+    sinatra (1.4.7)
+      rack (~> 1.5)
       rack-protection (~> 1.4)
       tilt (>= 1.3, < 3)
     thin (1.6.4)
@@ -53,9 +55,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  pg
   rack-test
   rake
   rspec
+  sequel
   shotgun
   simplecov
   sinatra
