@@ -44,4 +44,39 @@ describe "Game controller" do
 			expect(last_response).to be_ok
 			end
 		end
+
+	 describe "POST '/games' " do
+			it "creates new game" do
+				post '/games', {"size"=>"9", "player1_type"=>"computer", "player1_marker"=>"X", "player1_name"=>"Anda", "player2_type"=>"human", "player2_marker"=>"Y", "player2_name"=>"Eli"}
+
+				expect(last_response).to be_ok
+				expect(last_response.body).to include("Click to make your move")
+			end
+
+      it "displays game over page is game is over" do
+        post '/games', {"size"=>"9", "player1_type"=>"computer", "player1_marker"=>"X", "player2_type"=>"computer", "player2_marker"=>"Y"}
+
+      expect(last_response).to be_ok
+      expect(last_response.body).to include("Game over!")
+      end
+	 end
+
+
+  describe "PUT '/make_move/5' " do
+    it "displays the current state of the board" do
+      put '/make_move/2', {"id" => "2"}, { 'rack.session' => {"board" => [0, 1, 2, 3, 4, 5, 6, 7, 8], "players"=> [{:name=>"Player1", :marker=>"X", :type=>"human"}, {:name=>"Player2", :marker=>"Y", :type=>"human"}], "size" => 9}}
+
+      expect(last_response).to be_ok
+      expect(last_response.body).to include('X')
+    end
+
+    it "displays game over page is game is over" do
+      put '/make_move/2', {"id" => "2"}, { 'rack.session' => {"board" => ["X", "X", "2", "Y", "Y", 5, 6, 7, 8],
+            "players" => [{:name=>"Player1", :marker=>"X", :type=>"human"}, {:name=>"Player2", :marker=>"Y", :type=>"human"}],
+            "size" => 9}}
+
+      expect(last_response).to be_ok
+      expect(last_response.body).to include("Game over!")
+    end
+  end
 end

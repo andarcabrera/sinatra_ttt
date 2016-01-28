@@ -1,0 +1,26 @@
+<div class="ttt-board">
+  <table>
+  <% table_index = 0 %>
+  <% while table_index < @game.board.size %>
+    <tr>
+      <%  Math.sqrt(@game.board.size).to_i.times do |row_index| %>
+          <td class= "board-cell" id= "<%= table_index + row_index %>">
+          <% if @game.markers.include?(@game.board[table_index + row_index]) %>
+            <%= @game.board[table_index + row_index] %>
+          <% end %>
+          </td>
+      <% end %>
+    </tr>
+    <% table_index += Math.sqrt(@game.board.size).to_i %>
+  <% end %>
+  </table>
+
+  <h3 id="game-over">Game over!</h3>
+
+  <div id="home-button">
+    <form action="/">
+      <input type="submit" value="Home">
+    </form>
+  </div>
+
+</div>

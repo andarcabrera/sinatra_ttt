@@ -1,0 +1,25 @@
+<div class="ttt-board">
+  <table>
+  <% table_index = 0 %>
+  <% while table_index < @game.board.size %>
+    <tr>
+      <%  Math.sqrt(@game.board.size).to_i.times do |row_index| %>
+          <td class= "board-cell" id= "<%= table_index + row_index %>">
+          <% if @game.markers.include?(@game.board[table_index + row_index]) %>
+            <%= @game.board[table_index + row_index] %>
+          <% else %>
+            <% current_spot = table_index + row_index %>
+            <form action="/make_move/<%= current_spot %>" method="post">
+            <input type="hidden" name="_method" value="put"/>
+            <input type="submit" class="spot-link">
+            </form>
+          <% end %>
+          </td>
+      <% end %>
+    </tr>
+    <% table_index += Math.sqrt(@game.board.size).to_i %>
+  <% end %>
+  </table>
+
+  <h3 id="game-over">Click to make your move</h3>
+</div>
