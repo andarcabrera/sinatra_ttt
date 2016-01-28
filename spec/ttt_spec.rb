@@ -34,4 +34,14 @@ describe "Game controller" do
 			expect(last_response).to be_ok
 			end
 		end
+
+		describe "GET '/games/new' " do
+			it "displays the form for a new game" do
+			get '/games/new'
+
+			expect(last_response.body).to include('Player 1')
+			expect(last_response.body).to include('Player 2')
+			expect(last_response).to be_ok
+			end
+		end
 end

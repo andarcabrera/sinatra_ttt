@@ -17,6 +17,10 @@ get '/games' do
   erb :games
 end
 
+get '/games/new' do
+  erb :'/new'
+end
+
 get '/games/:id' do
 	@game = @db.all_games[:id => params[:id]]
   erb :'/show'

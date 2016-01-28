@@ -1,0 +1,57 @@
+  <div class="board-size-container">
+    <h3 class="board-size-selection">Chose your adventure. May the force of minimax be with you!</h3>
+
+
+
+    <form action="/games" method= "post" do |f|%>
+      <div id="board-size">
+        <h4 id="board-size-title">Board size:</h4>
+
+        <span class="board-size-details">
+          <input type="radio" name="size" id="9" value="9" checked>
+          <label for="9">3X3</label>
+
+          <input type="radio" name="size" id="16" value="16">
+          <label for="16">4X4</label>
+        </span>
+      </div>
+
+
+      <div class="player-details">
+        <h4 class="form-title">Player 1:</h4>
+        <input type="radio" name="player1_type" id="player1_human" value="human" checked>
+        <label for="player1_human">Human</label><br>
+
+        <input type="radio" name="player1_type" id="player1_computer" value="computer">
+        <label for="player1_computer" name="player1_type">Computer</label><br>
+
+        <label for="player1_marker" name="player1_marker">Marker</label>
+        <input type="text" name="player2_marker" id="player1_marker" value="X" required="true"><br>
+
+        <label for="player1_name" name="player1_name">Name</label>
+        <input type="text" name="player1_name" id="player1_name" value="Player1" required="true">
+      </div>
+
+
+      <div class="player-details">
+        <h4 class="form-title">Player 2:</h4>
+        <input type="radio" name="player2_type" id="player2_human" value="human" checked>
+        <label for="player2_human">Human</label><br>
+
+        <input type="radio" name="player2_type" id="player2_computer" value="computer">
+        <label for="player2_computer">Computer</label><br>
+
+        <label for="player2_marker" name="player2_marker">Marker</label>
+        <input type="text" name="player3_marker" id="player2_marker" value="Y" required="true"><br>
+
+        <label for="player2_name" name="player2_name">Name</label>
+        <input type="text" name="player2_name" id="player2_name" value="Player2" required="true">
+        <br>
+      </div>
+
+      <div class="submit-button">
+        <input type="submit" value="Submit">
+      </div>
+
+    </form>
+  </div>
