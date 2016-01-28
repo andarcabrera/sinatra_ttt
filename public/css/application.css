@@ -41,3 +41,80 @@ html {
   font-weight: bold;
   color: black;
 }
+
+
+.games-container {
+  width: 80%;
+  margin: auto;
+}
+
+table {
+    margin: auto;
+    margin-top: 50px;
+}
+
+td {
+  background-color: #505050;
+  width: 80px;
+  height: 80px;
+  text-align: center;
+  border-style: solid;
+  border-color: gray;
+}
+
+.board-size-container {
+  width: 50%;
+  text-align: left;
+  margin: auto;
+}
+
+#board-size {
+  font-weight: bold;
+}
+
+.board-size-selection {
+  text-align: center;
+}
+
+.form-title {
+  text-decoration: underline;;
+}
+
+.board-size-details {
+  font-size: 15px;
+}
+
+#board-size-title {
+  width: 18%;
+  display: inline-block;
+}
+
+input {
+  margin-top: 10px;
+}
+
+.player-details {
+  width: 50%;
+  float: left;
+  margin-top: 20px;
+}
+
+.submit-button {
+  margin-top: 200px;
+}
+
+input.spot-link {
+  background-color: #505050;
+  color: #505050;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border: none;
+}
+
+h3#game-over {
+  text-align: center;
+}
+
+#home-button {
+  text-align: center;
+}

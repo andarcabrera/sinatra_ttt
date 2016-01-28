@@ -1,0 +1,20 @@
+<% board = @game[:board][1..-2].split(",")  %>
+<% markers = @game[:markers][1..-2].split(",") %>
+
+<div class="ttt-board">
+  <table>
+  <% table_index = 0 %>
+  <% while table_index < board.size %>
+    <tr>
+      <%  Math.sqrt(board.size).to_i.times do |row_index| %>
+          <td class= "board-cell" id= "<%= table_index + row_index %>">
+          <% if markers.include?(board[table_index + row_index]) %>
+            <%= board[table_index + row_index] %>
+          <% end %>
+          </td>
+      <% end %>
+    </tr>
+    <% table_index += Math.sqrt(board.size).to_i %>
+  <% end %>
+  </table>
+</div>

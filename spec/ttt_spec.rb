@@ -21,7 +21,17 @@ describe "Game controller" do
 
         expect(last_response.body).to include('Game 1')
         expect(last_response.body).to include('Game 2')
-       #  expect(last_response).to be_ok
+        expect(last_response).to be_ok
       end
     end
+
+		describe "GET '/games/1' " do
+			it "displays the view for game 1" do
+			get '/games/1'
+
+			expect(last_response.body).to include('x')
+			expect(last_response.body).to include('Y')
+			expect(last_response).to be_ok
+			end
+		end
 end
