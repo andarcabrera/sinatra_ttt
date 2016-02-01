@@ -54,7 +54,7 @@ describe "Game controller" do
 			end
 
       it "displays game over page is game is over" do
-        post '/games', {"size"=>"9", "player1_type"=>"computer", "player1_marker"=>"X", "player2_type"=>"computer", "player2_marker"=>"Y"}
+        post '/games', {"size"=>"9", "player1_type"=>"computer", "player1_marker"=>"X", "player1_name"=>"player1", "player2_type"=>"computer", "player2_marker"=>"Y", "player2_name"=>"player2"}
 
       expect(last_response).to be_ok
       expect(last_response.body).to include("Game over!")
@@ -64,7 +64,11 @@ describe "Game controller" do
 
   describe "PUT '/make_move/5' " do
     it "displays the current state of the board" do
-      put '/make_move/2', {"id" => "2"}, { 'rack.session' => {"board" => [0, 1, 2, 3, 4, 5, 6, 7, 8], "players"=> [{:name=>"Player1", :marker=>"X", :type=>"human"}, {:name=>"Player2", :marker=>"Y", :type=>"human"}], "size" => 9}}
+      put '/make_move/2', {"id" => "2"}, { 'rack.session' =>
+                                         {"board" => [0, 1, 2, 3, 4, 5, 6, 7, 8],
+                                          "players_info"=> [{:name=>"Player1", :marker=>"X", :type=>"human"},
+                                                       {:name=>"Player2", :marker=>"Y", :type=>"human"}],
+                                          "size" => 9}}
 
       expect(last_response).to be_ok
       expect(last_response.body).to include('X')
@@ -72,7 +76,7 @@ describe "Game controller" do
 
     it "displays game over page is game is over" do
       put '/make_move/2', {"id" => "2"}, { 'rack.session' => {"board" => ["X", "X", "2", "Y", "Y", 5, 6, 7, 8],
-            "players" => [{:name=>"Player1", :marker=>"X", :type=>"human"}, {:name=>"Player2", :marker=>"Y", :type=>"human"}],
+            "players_info" => [{:name=>"Player1", :marker=>"X", :type=>"human"}, {:name=>"Player2", :marker=>"Y", :type=>"human"}],
             "size" => 9}}
 
       expect(last_response).to be_ok

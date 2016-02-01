@@ -1,5 +1,4 @@
 require 'ttt'
-require_relative 'human_move'
 
 class Game
 
@@ -7,8 +6,7 @@ class Game
     @db = db
 	  @players = players
 		@size = size
-		@human_move = HumanMove.new
-		@ttt = TTT::Game.new(@db, @players, @human_move, @size)
+		@ttt = TTT::Game.new(@db, @players, @size)
   end
 
 	def update_board(filled_spots)
@@ -19,15 +17,11 @@ class Game
 		end
 	end
 
-  def make_move(spot = nil)
-		if player_type == "human" && spot == nil
-			return nil
-		end
-		selected_spot = @ttt.selected_spot(spot)
-		@ttt.make_move(selected_spot)
-		while !game_over? && @ttt.current_player[:type] == "computer"
-			selected_spot = @ttt.selected_spot(spot)
-			@ttt.make_move(selected_spot)
+  def make_move
+    while !game_over?
+      @ttt.make_move
+      break if game_over?
+      break if  @ttt.select_spot == "break loop"
 		end
 	end
 
@@ -49,9 +43,5 @@ class Game
 
 	def markers
 		@ttt.markers
-	end
-
-  def player_type
-		@ttt.current_player[:type]
 	end
 end

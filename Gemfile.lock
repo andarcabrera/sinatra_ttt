@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/andarcabrera/ttt_gem.git
-  revision: f32945b9899dd61cbfb0d4d82b3463bf373f3ea1
+  revision: caef110f8c80ee4a6603388e25ab04e43f79850e
   specs:
     ttt (0.0.0)
 
@@ -32,7 +32,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.4.0)
     rspec-support (3.4.1)
-    sequel (4.30.0)
+    sequel (4.31.0)
     shotgun (0.9.1)
       rack (>= 1.0)
     simplecov (0.11.1)
