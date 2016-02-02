@@ -8,7 +8,7 @@ gem 'rake'
 gem 'shotgun'
 gem 'rack-test'
 gem 'ttt', :git => 'https://github.com/andarcabrera/ttt_gem.git'
-gem 'ttt_db'
+gem 'ttt_db', :git => 'https://github.com/andarcabrera/sequel_gem.git'
 gem 'sequel'
 gem 'pg'
 

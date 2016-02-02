@@ -30,9 +30,11 @@ end
 post '/games' do
   players_info = get_players_info(params)
   size = get_size(params)
-  setup = GameSetup.new(players_info, size, "break loop")
+  setup = GameSetup.new(players_info, size)
+
   @game = Game.new(@db, setup.create_players, setup.size)
   @game.make_move
+
   session["players_info"] = players_info
   session["size"] = size
 	session["board"] = @game.board
@@ -49,6 +51,7 @@ put '/make_move/:id' do
   @game = Game.new(@db, setup.create_players, setup.size)
   @game.update_board(session["board"])
   @game.make_move
+
   session["board"] = @game.board
 
   if @game.game_over?

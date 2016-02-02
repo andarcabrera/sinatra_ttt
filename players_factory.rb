@@ -18,8 +18,4 @@ class GameSetup
           players << TTT::HumanPlayer.new(player[:name], player[:marker], UserInterface.new(spot))
         end
     players
-
-    def size
-      @params["size"].to_i
-    end
   end

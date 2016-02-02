@@ -19,17 +19,16 @@ describe "Game controller" do
       it "displays list of all games" do
         get '/games'
 
-        expect(last_response.body).to include('Game 1')
-        expect(last_response.body).to include('Game 2')
+        expect(last_response.body).to include('Game 190')
         expect(last_response).to be_ok
       end
     end
 
-		describe "GET '/games/1' " do
-			it "displays the view for game 1" do
-			get '/games/1'
+		describe "GET '/games/190' " do
+			it "displays the view for game 190" do
+			get '/games/190'
 
-			expect(last_response.body).to include('x')
+			expect(last_response.body).to include('X')
 			expect(last_response.body).to include('Y')
 			expect(last_response).to be_ok
 			end

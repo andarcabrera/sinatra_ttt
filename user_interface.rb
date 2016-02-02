@@ -2,18 +2,19 @@ class UserInterface
 
   def initialize(spot)
     @spot = spot
-    @spot_taken = nil
+    @previous_spot = nil
   end
 
   def get_spot
-   if @spot_taken == nil
-      @spot_taken = @spot
-      @spot
-   elsif @spot_taken == @spot
-     "break loop"
-   end
+    @previous_spot = @spot
+    @spot
+  end
+
+  def no_more_moves_allowed?
+    @spot == @previous_spot
   end
 
   def error
   end
 end
+

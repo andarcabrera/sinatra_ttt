@@ -19,9 +19,9 @@ class Game
 
   def make_move
     while !game_over?
+      break if @ttt.no_moves_left?
       @ttt.make_move
       break if game_over?
-      break if  @ttt.select_spot == "break loop"
 		end
 	end
 
