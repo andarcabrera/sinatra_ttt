@@ -15,6 +15,7 @@ class UserInterface
   end
 
   def error
+    raise "Alex, please stop trying to hack my code"
   end
 end
 

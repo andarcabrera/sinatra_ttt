@@ -1,0 +1,55 @@
+== Info: Rebuilt URL to: cookie-jar/
+== Info: Hostname was NOT found in DNS cache
+== Info: Could not resolve host: cookie-jar
+== Info: Closing connection 0
+== Info: Hostname was NOT found in DNS cache
+== Info:   Trying ::1...
+== Info: connect to ::1 port 9393 failed: Connection refused
+== Info:   Trying 127.0.0.1...
+== Info: Connected to localhost (127.0.0.1) port 9393 (#1)
+=> Send header, 102 bytes (0x66)
+0000: POST /make_move/7?method=_put HTTP/1.1
+0028: User-Agent: curl/7.37.1
+0041: Host: localhost:9393
+0057: Accept: */*
+0064: 
+<= Recv header, 24 bytes (0x18)
+0000: HTTP/1.1 404 Not Found
+<= Recv header, 39 bytes (0x27)
+0000: Content-Type: text/html;charset=utf-8
+<= Recv header, 17 bytes (0x11)
+0000: X-Cascade: pass
+<= Recv header, 21 bytes (0x15)
+0000: Content-Length: 479
+<= Recv header, 33 bytes (0x21)
+0000: X-XSS-Protection: 1; mode=block
+<= Recv header, 33 bytes (0x21)
+0000: X-Content-Type-Options: nosniff
+<= Recv header, 29 bytes (0x1d)
+0000: X-Frame-Options: SAMEORIGIN
+<= Recv header, 512 bytes (0x200)
+0000: Set-Cookie: rack.session=BAh7CEkiD3Nlc3Npb25faWQGOgZFVEkiRTc5M2Y
+0040: 4N2ZkMDUwMTQ1ZTIxODQz%0AYWM1ZDYwZTIxYTFiMDFiYTU5NTFlZjVmODhhNjQ3
+0080: OWIyNjcxMzFhZmExNDYG%0AOwBGSSIJY3NyZgY7AEZJIiU1ZTk5MTdlN2VkZGVkM
+00c0: zQ0NjM5ZTgxMjA0Mjky%0ANTg1ZgY7AEZJIg10cmFja2luZwY7AEZ7B0kiFEhUVF
+0100: BfVVNFUl9BR0VOVAY7%0AAFRJIi0yOTA1MWU3NDQ4ZWFiZDljMDc0MTVhMTI2Mjk
+0140: 2NjZjMWQxYTNhYjk3%0ABjsARkkiGUhUVFBfQUNDRVBUX0xBTkdVQUdFBjsAVEki
+0180: LWRhMzlhM2VlNWU2%0AYjRiMGQzMjU1YmZlZjk1NjAxODkwYWZkODA3MDkGOwBG%
+01c0: 0A--d6f1fcfe12e30d768837e84d8008b034c8000d18; path=/; HttpOnly
+<= Recv header, 24 bytes (0x18)
+0000: Connection: keep-alive
+== Info: Server thin is not blacklisted
+<= Recv header, 14 bytes (0xe)
+0000: Server: thin
+<= Recv header, 2 bytes (0x2)
+0000: 
+<= Recv data, 479 bytes (0x1df)
+0000: <!DOCTYPE html>.<html>.<head>.  <style type="text/css">.  body {
+0040:  text-align:center;font-family:helvetica,arial;font-size:22px;. 
+0080:    color:#888;margin:20px}.  #c {margin:0 auto;width:500px;text-
+00c0: align:left}.  </style>.</head>.<body>.  <h2>Sinatra doesn&rsquo;
+0100: t know this ditty.</h2>.  <img src='http://localhost:9393/__sina
+0140: tra__/404.png'>.  <div id="c">.    Try this:.    <pre>post &#x27
+0180: ;&#x2F;make_move&#x2F;7&#x27; do.  &quot;Hello World&quot;.end.<
+01c0: /pre>.  </div>.</body>.</html>.
+== Info: Connection #1 to host localhost left intact
