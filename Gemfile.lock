@@ -1,11 +1,11 @@
 GIT
-  remote: https://github.com/andarcabrera/sequel_gem.git
+  remote: git@github.com:andarcabrera/sequel_gem.git
   revision: 980e0139bd6039966cb9f35e656784dc6bac64fb
   specs:
     ttt_db (0.0.0)
 
 GIT
-  remote: https://github.com/andarcabrera/ttt_gem.git
+  remote: git@github.com:andarcabrera/ttt_gem.git
   revision: bb48e407e6ebeae29891d5ad8daf5ffc5eeb8c04
   specs:
     ttt (0.0.0)
@@ -47,7 +47,7 @@ GEM
     sequel (4.31.0)
     shotgun (0.9.1)
       rack (>= 1.0)
-    simplecov (0.11.1)
+    simplecov (0.11.2)
       docile (~> 1.1.0)
       json (~> 1.8)
       simplecov-html (~> 0.10.0)

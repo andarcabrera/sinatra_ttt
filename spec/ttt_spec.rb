@@ -34,15 +34,14 @@ describe "Game controller" do
     end
   end
 
- xdescribe "GET '/games/:id' " do
+ describe "GET '/games/:id' " do
     before do
-      expect_any_instance_of(GameDB::SequelConnection).to receive(:all_games).and_return([{:id=>15, :board=>"(Y,X,X,X,X,Y,Y,Y,X)", :markers=>"(X,Y)"}])
+      expect_any_instance_of(GameDB::SequelConnection).to receive(:get_game).and_return({:id=>15, :board=>"(Y,X,X,X,X,Y,Y,Y,X)", :markers=>"(X,Y)"})
     end
 
     it "displays the view for a game" do
     get '/games/15'
 
-    p GameDB::SequelConnection.all_games
     expect(last_response.body).to include('X')
     expect(last_response.body).to include('Y')
     expect(last_response).to be_ok
