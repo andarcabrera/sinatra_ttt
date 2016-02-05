@@ -14,8 +14,10 @@ class GameSetup
     players_info.each do |player|
       if player[:type] == "computer"
           players << TTT::ComputerPlayer.new(player[:name], player[:marker]))
-        else
+      else
           players << TTT::HumanPlayer.new(player[:name], player[:marker], UserInterface.new(spot))
-        end
+      end
+    end
+
     players
   end
