@@ -18,10 +18,8 @@ class Game
 	end
 
   def make_move
-    while !game_over?
-      break if @ttt.no_moves_left?
+    until game_over? || @ttt.no_moves_left?
       @ttt.make_move
-      break if game_over?
 		end
 	end
 

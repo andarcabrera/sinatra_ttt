@@ -10,6 +10,7 @@ before do
 end
 
 get '/' do
+  session.clear
   erb :index
 end
 
