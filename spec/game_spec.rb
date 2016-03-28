@@ -1,5 +1,5 @@
-require_relative "../game"
-require_relative "spec_helper"
+require "spec_helper"
+require "game"
 
 describe Game do
 

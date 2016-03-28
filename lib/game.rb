@@ -10,11 +10,7 @@ class Game
   end
 
 	def update_board(filled_spots)
-		filled_spots.each_with_index do |filled_spot, index|
-			if markers.include?(filled_spot)
-				@ttt.manually_update_board(index, filled_spot)
-			end
-		end
+    @ttt.update_board_state(filled_spots)
 	end
 
   def make_move

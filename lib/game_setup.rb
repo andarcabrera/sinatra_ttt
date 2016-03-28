@@ -1,5 +1,5 @@
-require 'ttt'
-require_relative 'user_interface'
+require './ttt'
+require './lib/user_interface'
 
 class GameSetup
 
@@ -13,6 +13,9 @@ class GameSetup
 
   def create_players
     players = []
+
+    p "params"
+    p @players_info
     @players_info.each do |player|
       if player[:type] == "computer"
           players << TTT::ComputerPlayer.new(player[:name], player[:marker])
@@ -21,5 +24,9 @@ class GameSetup
         end
     end
     players
+  end
+
+  def invalid_markers?
+    @players_info[0][:marker] == @players_info[1][:marker]
   end
 end

@@ -1,6 +1,5 @@
-#require File.expand_path '../spec_helper.rb', __FILE__
-require_relative "../ttt"
-require_relative "spec_helper"
+require "spec_helper"
+require "./ttt"
 
 describe "Game controller" do
 
@@ -75,10 +74,10 @@ describe "Game controller" do
  end
 
 
-  describe "PUT '/make_move/5' " do
+  describe "PUT '/make_move/:id' " do
     it "displays the current state of the board" do
-      put '/make_move/2', {"id" => "2"}, { 'rack.session' =>
-                                         {"board" => [0, 1, 2, 3, 4, 5, 6, 7, 8],
+      put '/make_move/2', {}, { 'rack.session' =>
+                                         {"board" => ["0", "1", "2", "3", "4", "5", "6", "7", "8"],
                                           "players_info"=> [{:name=>"Player1", :marker=>"X", :type=>"human"},
                                                        {:name=>"Player2", :marker=>"Y", :type=>"human"}],
                                           "size" => 9}}
@@ -88,7 +87,7 @@ describe "Game controller" do
     end
 
     it "displays game over page is game is over" do
-      put '/make_move/2', {"id" => "2"}, { 'rack.session' => {"board" => ["X", "X", "2", "Y", "Y", 5, 6, 7, 8],
+      put '/make_move/2', {"id" => "2"}, { 'rack.session' => {"board" => ["X", "X", "2", "Y", "Y", "5", "6", "7", "8"],
             "players_info" => [{:name=>"Player1", :marker=>"X", :type=>"human"}, {:name=>"Player2", :marker=>"Y", :type=>"human"}],
             "size" => 9}}
 

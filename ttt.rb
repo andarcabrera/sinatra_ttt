@@ -1,7 +1,9 @@
 require 'sinatra'
-require_relative 'game'
-require_relative 'game_setup'
 require 'ttt_db'
+require './lib/game'
+require './lib/game_setup'
+
+enable :sessions
 
 before do
   db_name = "anda_ttt_data_base"
@@ -30,6 +32,7 @@ end
 post '/games' do
   players_info = get_players_info(params)
   size = get_size(params)
+
   setup = GameSetup.new(players_info, size)
 
   @game = Game.new(@db, setup.create_players, setup.size)
@@ -41,6 +44,8 @@ post '/games' do
 
   if @game.game_over?
     erb :'/game_over'
+  elsif setup.invalid_markers?
+    erb :'/new'
   else
     erb :'make_move'
   end
@@ -48,6 +53,7 @@ end
 
 put '/make_move/:id' do
   setup = GameSetup.new(session["players_info"], session["size"], params[:id])
+  p session["players_info"]
   @game = Game.new(@db, setup.create_players, setup.size)
   @game.update_board(session["board"])
   @game.make_move

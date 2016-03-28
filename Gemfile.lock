@@ -1,15 +1,3 @@
-GIT
-  remote: git@github.com:andarcabrera/sequel_gem.git
-  revision: 980e0139bd6039966cb9f35e656784dc6bac64fb
-  specs:
-    ttt_db (0.0.0)
-
-GIT
-  remote: git@github.com:andarcabrera/ttt_gem.git
-  revision: bb48e407e6ebeae29891d5ad8daf5ffc5eeb8c04
-  specs:
-    ttt (0.0.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -62,6 +50,8 @@ GEM
       eventmachine (~> 1.0, >= 1.0.4)
       rack (~> 1.0)
     tilt (2.0.2)
+    ttt (0.0.0)
+    ttt_db (0.0.0)
 
 PLATFORMS
   ruby
@@ -77,8 +67,8 @@ DEPENDENCIES
   simplecov
   sinatra
   thin
-  ttt!
-  ttt_db!
+  ttt (= 0.0.0)
+  ttt_db
 
 BUNDLED WITH
    1.11.2

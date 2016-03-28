@@ -1,5 +1,5 @@
-require_relative "../user_interface"
-require_relative "spec_helper"
+require "user_interface"
+require "spec_helper"
 
 describe UserInterface do
 
